@@ -1,0 +1,17 @@
+{
+  "name": "backend_ecommerce",
+  "version": "1.0.0",
+  "description": "backend for e-commerce website",
+  "main": "server.js",
+  "scripts": {
+    "start": "supervisor server.js"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "supervisor": "^0.12.0"
+  }
+}
