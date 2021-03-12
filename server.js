@@ -12,9 +12,9 @@ app.post('/add', (req, res) => {
   res.status(200).send(req.body)
 })
 
-const port = process.env.NODE_ENV;
+const PORT = process.env.PORT || 4000;
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   return console.log("Server is using Supervisor running on port 3000");
 });
 
