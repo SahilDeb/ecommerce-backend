@@ -5,6 +5,16 @@ app.get('/', (req, res, next) => {
   res.send("Hello from GET API")
 })
 
+app.get('/myname', (req, res, next) => {
+  res.status(200)
+
+  res.send({
+    name: "Sahil Debnath"
+  });
+
+  res.end()
+})
+
 app.post('/add', (req, res) => {
   // var n1 = req.body.number1
   // var n2 = req.body.number2
@@ -15,6 +25,6 @@ app.post('/add', (req, res) => {
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
-  return console.log("Server is using Supervisor running on port 3000");
+  return console.log(`Server is using Supervisor running on port ${PORT}`);
 });
 
