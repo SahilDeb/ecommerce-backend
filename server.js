@@ -1,6 +1,16 @@
+// Imports
 const express = require('express')
 const app = express()
 
+// Global level middlewares
+app.use(
+  express.urlencoded({
+    extended: true
+  })
+)
+app.use(express.json())
+
+// API level middlewares
 app.get('/', (req, res, next) => {
   res.send("Hello from GET API")
 })
@@ -16,9 +26,9 @@ app.get('/myname', (req, res, next) => {
 })
 
 app.post('/add', (req, res) => {
-  // var n1 = req.body.number1
-  // var n2 = req.body.number2
-  // res.send(n1 + n2)
+  let n1 = +req.body?.num1
+  let n2 = +req.body?.num2
+  console.log(`Value from POST ${n1} + ${n2} = ${n1 + n2}`);
   res.status(200).send(req.body)
 })
 
