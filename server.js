@@ -1,8 +1,12 @@
 // Imports
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
 // Global level middlewares
+
+app.use(cors())
+
 app.use(
   express.urlencoded({
     extended: true
@@ -11,11 +15,11 @@ app.use(
 app.use(express.json())
 
 // API level middlewares
-app.get('/', (req, res, next) => {
+app.get('/', (req, res) => {
   res.send("Hello from GET API")
 })
 
-app.get('/myname', (req, res, next) => {
+app.get('/myname', (req, res) => {
   res.status(200)
 
   res.send({
